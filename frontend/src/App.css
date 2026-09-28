@@ -17,7 +17,18 @@
 	.invoice-paper .invoice-meta, .invoice-paper .client-block, .invoice-paper > table, .invoice-paper .totals-area, .invoice-paper .signature { width: 72%; }
 	.invoice-paper > table tbody { height: 410px; }
 }
+.note-table-head, .note-row { grid-template-columns: 25px minmax(105px, 1.2fr) minmax(125px, 1.25fr) minmax(145px, 1.35fr) minmax(105px, .8fr) minmax(155px, auto); }
+.note-table { overflow-x: auto; }
+.note-row .row-amount { min-width: 105px; white-space: nowrap; }
+.note-row .row-actions { min-width: 155px; flex-wrap: nowrap; white-space: nowrap; }
+@media (max-width: 700px) {
+	.note-table-head, .note-row { grid-template-columns: 22px minmax(0, 1fr) minmax(140px, auto); min-width: 520px; }
+	.note-table-head span:nth-child(4), .note-table-head span:nth-child(5), .note-row > span:nth-child(4), .note-row .row-amount { display: none; }
+	.note-row .row-actions { grid-column: 3; min-width: 140px; }
+}
 .document-logo { content: url('/logo.png'); width: 185px; height: 100px; object-fit: contain; }
+.topbar .brand-mark { width: 58px; height: 48px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: transparent; border-radius: 0; }
+.topbar .brand-mark img { display: block; width: 74px; height: 56px; object-fit: contain; }
 @media print { .document-logo { content: url('/logo.png'); width: 210px; height: 115px; object-fit: contain; } }
  .button-primary { background: #0c6b5a; color: #fff; }.button-primary:disabled { opacity: .5; cursor: not-allowed; }.flash { max-width: 1200px; margin: 0 auto 20px; padding: 12px 18px; border-radius: 6px; font-size: 12px; }.flash.success { background: #e2f2e9; color: #176344; }.flash.error { background: #fae8e6; color: #a33f37; }
  .content-panel, .invoice-view { max-width: 1200px; margin: 0 auto 56px; background: #fff; border: 1px solid #dfe7e1; border-radius: 10px; box-shadow: 0 12px 35px rgba(32, 63, 53, .05); }.list-toolbar { padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e4ebe6; }.list-toolbar h2 { margin: 0; font: 700 16px Manrope, sans-serif; }.list-toolbar p { margin: 6px 0 0; color: #87928c; font-size: 11px; }.toolbar-action { display: flex; align-items: center; gap: 16px; }.toolbar-action label { color: #697771; font-size: 11px; font-weight: 700; }.toolbar-action input { width: 48px; margin: 0 4px 0 7px; padding: 9px 5px; border: 1px solid #d8e2db; border-radius: 4px; text-align: center; }.empty-state { padding: 75px 20px; text-align: center; }.empty-state > span { color: #0c6b5a; font: 700 12px Manrope, sans-serif; }.empty-state h3 { margin: 13px 0 7px; font: 700 18px Manrope, sans-serif; }.empty-state p { margin: 0 0 23px; color: #87928c; font-size: 12px; }.note-table-head, .note-row { display: grid; grid-template-columns: 25px 1.2fr 1.25fr 1.35fr .8fr; gap: 13px; align-items: center; }.note-table-head { padding: 15px 30px; color: #87928c; background: #f7faf8; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }.note-row { padding: 18px 30px; border-top: 1px solid #edf1ee; color: #31433b; font-size: 12px; }.note-row:hover, .note-row.is-selected { background: #f2f8f4; }.note-row input { accent-color: #0c6b5a; }.note-row span { display: grid; gap: 5px; }.note-row small { color: #8b9690; font-size: 10px; }.row-amount { color: #0c6b5a; text-align: right; }
